@@ -19,13 +19,7 @@ class DatabaseSeeder extends Seeder
         Company::factory()->count(1000)->create()->each(fn($company)=>$company->users()
         ->createMany(User::factory()->count(50)->make()->map->getAttributes()));
 
+        $this->call(PostSeeder::class);
 
-
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }
