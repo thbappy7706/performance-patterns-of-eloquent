@@ -5,8 +5,10 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Log;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -48,4 +50,19 @@ class User extends Authenticatable
         return $this->belongsTo(Company::class);
     }
 
+    public function logins():HasMany
+    {
+        return $this->hasMany(Login::class);
+    }
+
+
+    public function scopeWithLastLoginAt($query)
+    {
+        $query->addSelect(['last_login_at' => Login::select('created_at')
+            ->whereColumn('user_id', 'users.id')
+            ->latest()
+            ->take(1)
+        ])->withCasts(['last_login_at' => 'datetime']);
+
+    }
 }

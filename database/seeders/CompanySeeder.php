@@ -2,13 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\Author;
-use App\Models\Post;
+use App\Models\Company;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class PostSeeder extends Seeder
+class CompanySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,6 +16,8 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        Author::factory()->count(25)->create()->each(fn($author) => $author->posts()->createMany(Post::factory()->count(5)->make()->toArray()));
+        Company::factory()->count(1000)->create()->each(fn($company)=>$company->users()
+            ->createMany(User::factory()->count(50)->make()->map->getAttributes()));
+
     }
 }
