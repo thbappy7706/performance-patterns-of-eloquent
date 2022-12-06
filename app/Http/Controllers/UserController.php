@@ -8,9 +8,11 @@ use Illuminate\View\View;
 
 class UserController extends Controller
 {
-    public function index():View
+    public function index(): View
     {
-        $users =  User::query()->withLastLoginAt()->with('company')->orderBy('name')->simplePaginate();
-        return view('users.index',['users'=>$users]);
+        $users = User::query()
+            ->withLastLogin()
+            ->with('company')->orderBy('name')->simplePaginate();
+        return view('users.index', ['users' => $users]);
     }
 }
