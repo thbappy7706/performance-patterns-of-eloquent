@@ -16,7 +16,7 @@ class CompanySeeder extends Seeder
      */
     public function run()
     {
-        Company::factory()->count(1000)->create()->each(fn($company)=>$company->users()
+        Company::factory()->count(100)->create()->each(fn($company)=>$company->users()
             ->createMany(User::factory()->count(50)->make()->map->getAttributes()));
 
     }

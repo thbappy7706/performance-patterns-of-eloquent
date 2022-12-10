@@ -10,9 +10,8 @@ class UserController extends Controller
 {
     public function index(): View
     {
-        $users = User::query()
-            ->withLastLogin()
-            ->with('company')->orderBy('name')->simplePaginate();
+        $users = User::query()->withLastLogin()
+            ->with('company')->orderBy('id')->simplePaginate();
         return view('users.index', ['users' => $users]);
     }
 }

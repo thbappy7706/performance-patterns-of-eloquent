@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('logins', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained('users');
-            $table->string('ip_address', 50);
-            $table->timestamp('created_at');
+        Schema::create('features', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('title', 100);
+            $table->string('status', 10);
+            $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('logins');
+        Schema::dropIfExists('features');
     }
 };

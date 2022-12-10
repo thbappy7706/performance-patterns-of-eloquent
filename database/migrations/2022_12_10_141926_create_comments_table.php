@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('logins', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('feature_id')->constrained('features');
             $table->foreignId('user_id')->constrained('users');
-            $table->string('ip_address', 50);
-            $table->timestamp('created_at');
+            $table->text('comment');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('logins');
+        Schema::dropIfExists('comments');
     }
 };
