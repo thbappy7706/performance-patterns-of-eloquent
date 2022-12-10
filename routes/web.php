@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\FeatureController;
 
 /*
@@ -20,3 +21,5 @@ use App\Http\Controllers\FeatureController;
  Route::get('posts',[PostController::class,'index'])->name('posts.index');
  Route::get('features',[FeatureController::class,'index'])->name('features.index');
  Route::get('features/{feature}',[FeatureController::class,'show'])->name('feature.show');
+Route::get('members',[MemberController::class,'index'])->name('members.index');
+

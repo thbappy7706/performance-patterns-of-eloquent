@@ -15,4 +15,11 @@ class Company extends Model
         return $this->hasMany(User::class);
     }
 
+    public function members():HasMany
+    {
+        return $this->hasMany(Member::class);
+    }
+
+
+
 }
