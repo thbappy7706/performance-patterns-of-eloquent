@@ -6,11 +6,12 @@
     <header class="bg-white shadow">
         <div class="max-w-6xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
             <div class="md:flex md:items-center md:justify-between">
-                <div class="flex-1 min-w-0">
+                <div class="flex-2 min-w-0">
                     <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate">
                         Features
                     </h2>
                 </div>
+
             </div>
         </div>
     </header>
@@ -89,7 +90,7 @@
                                     {{ $feature->comments_count }} {{ Str::plural('comment', $feature->comments_count) }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">Edit</a>
+                                    <a href="{{route('feature.show',$feature->id)}}" class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">View</a>
                                 </td>
                             </tr>
                         @endforeach

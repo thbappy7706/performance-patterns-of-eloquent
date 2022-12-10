@@ -19,3 +19,4 @@ use App\Http\Controllers\FeatureController;
  Route::get('/',[UserController::class,'index']);
  Route::get('posts',[PostController::class,'index'])->name('posts.index');
  Route::get('features',[FeatureController::class,'index'])->name('features.index');
+ Route::get('features/{feature}',[FeatureController::class,'show'])->name('feature.show');

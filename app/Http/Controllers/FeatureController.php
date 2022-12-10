@@ -26,9 +26,17 @@ class FeatureController extends Controller
             ->withCount('comments')
             ->paginate();
 
-        return view('features', [
+        return view('features.features', [
             'statuses' => $statuses,
             'features' => $features
         ]);
     }
+
+    public function show(Feature $feature):View
+    {
+        $feature->load('comments.user');
+        $feature->comments->each->setRelation('feature', $feature);
+        return view('features.show', ['feature' => $feature]);
+    }
+
 }
