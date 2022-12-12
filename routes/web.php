@@ -22,9 +22,9 @@ Route::get('/', function () {
     return to_route('login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+//Route::get('/dashboard', function () {
+//    return view('dashboard');
+//})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('users', [UserController::class, 'index'])->name('users.index');
     Route::get('posts', [PostController::class, 'index'])->name('posts.index');
+    Route::get('dashboard', [FeatureController::class, 'index'])->name('dashboard');
     Route::get('features', [FeatureController::class, 'index'])->name('features.index');
     Route::get('features/{feature}', [FeatureController::class, 'show'])->name('feature.show');
     Route::get('members', [MemberController::class, 'index'])->name('members.index');
