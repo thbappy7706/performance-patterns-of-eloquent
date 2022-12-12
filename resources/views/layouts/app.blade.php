@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <script src="https://cdn.tailwindcss.com"></script>
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -13,10 +12,15 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <!-- Styles -->
+        @livewireStyles
     </head>
     <body class="font-sans antialiased">
+        <x-jet-banner />
+
         <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+            @livewire('navigation-menu')
 
             <!-- Page Heading -->
             @if (isset($header))
@@ -32,5 +36,9 @@
                 {{ $slot }}
             </main>
         </div>
+
+        @stack('modals')
+
+        @livewireScripts
     </body>
 </html>
