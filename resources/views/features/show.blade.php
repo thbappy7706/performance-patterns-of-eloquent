@@ -1,6 +1,4 @@
-@extends('layouts.layout')
-
-@section('content')
+<x-app-layout>
     <header class="bg-white shadow">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
             <h2 class="py-6 text-3xl font-bold leading-tight text-gray-900">
@@ -72,4 +70,4 @@
             </div>
         @endforeach
     </main>
-@endsection
+</x-app-layout>

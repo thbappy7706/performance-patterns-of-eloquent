@@ -1,7 +1,4 @@
-@extends('layouts.layout')
-
-@section('content')
-
+<x-app-layout>
     <header class="bg-white shadow">
         <div class="max-w-6xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
             <div class="md:flex md:items-center md:justify-between">
@@ -27,8 +24,8 @@
     <main class="max-w-6xl mx-auto sm:px-6 lg:px-8 py-12">
         <form class="max-w-lg">
             <div class="mb-6">
-                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Search</label>
-                <input id="search" name="search" value="{{ request('search') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." autofocus />
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Search</label>
+                <input id="search" name="search" value="{{ request('search') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Search..." autofocus />
 
             </div>
         </form>
@@ -76,4 +73,4 @@
         </div>
     </main>
 
-@endsection
+</x-app-layout>
