@@ -1,14 +1,10 @@
-@extends('layouts.layout')
-
-@section('content')
-
-
+<x-app-layout>
     <header class="bg-white shadow">
         <div class="max-w-6xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
             <div class="md:flex md:items-center md:justify-between">
                 <div class="flex-1 min-w-0">
                     <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate">
-                       Posts
+                        Posts
                     </h2>
                 </div>
             </div>
@@ -39,5 +35,4 @@
         </div>
     </main>
 
-
-@endsection
+</x-app-layout>
