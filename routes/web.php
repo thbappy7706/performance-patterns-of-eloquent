@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,5 @@ use App\Http\Controllers\FeatureController;
  Route::get('features',[FeatureController::class,'index'])->name('features.index');
  Route::get('features/{feature}',[FeatureController::class,'show'])->name('feature.show');
 Route::get('members',[MemberController::class,'index'])->name('members.index');
+Route::get('customers',[CustomerController::class,'index'])->name('customers.index');
 

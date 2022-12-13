@@ -50,6 +50,11 @@ class User extends Authenticatable
         return $this->belongsTo(Company::class);
     }
 
+    public function customers():HasMany
+    {
+        return $this->hasMany(Customer::class, 'sales_rep_id');
+    }
+
     public function logins():HasMany
     {
         return $this->hasMany(Login::class);

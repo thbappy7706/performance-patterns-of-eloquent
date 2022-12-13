@@ -21,6 +21,7 @@
                         <a href="{{route('posts.index')}}" class="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 {{ (request()->is('posts')) ? 'bg-gray-900' : '' }}">Posts</a>
                         <a href="{{route('features.index')}}" class=" px-3 py-2 rounded-md text-sm font-medium text-white focus:outline-none focus:text-white focus:bg-gray-700 {{ (request()->is('features')) ? 'bg-gray-900' : '' }} ">Features</a>
                         <a href="{{route('members.index')}}" class=" px-3 py-2 rounded-md text-sm font-medium text-white focus:outline-none focus:text-white focus:bg-gray-700 {{ (request()->is('members')) ? 'bg-gray-900' : '' }} ">Members</a>
+                        <a href="{{route('customers.index')}}" class=" px-3 py-2 rounded-md text-sm font-medium text-white focus:outline-none focus:text-white focus:bg-gray-700 {{ (request()->is('customers')) ? 'bg-gray-900' : '' }} ">Customers</a>
                     </div>
                 </div>
             </div>
